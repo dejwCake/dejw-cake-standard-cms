@@ -17,7 +17,7 @@ class CreateMetaItems extends AbstractMigration
             'null' => true,
         ]);
         $table->addIndex(['entity_id',]);
-        $table->addColumn('entity_class', 'integer', [
+        $table->addColumn('entity_class', 'string', [
             'null' => true,
         ]);
         $table->addIndex(['entity_class',]);
@@ -31,7 +31,7 @@ class CreateMetaItems extends AbstractMigration
         $table->addColumn('keywords', 'string', [
             'limit' => 255,
         ]);
-        $table->addColumn('description', 'string', [
+        $table->addColumn('description', 'text', [
             'limit' => 255,
         ]);
         $table->addColumn('enabled', 'boolean', [

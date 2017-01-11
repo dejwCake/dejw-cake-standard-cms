@@ -2,15 +2,19 @@
 namespace DejwCake\StandardCMS\Model\Entity;
 
 use Cake\ORM\Entity;
+use Cake\ORM\Behavior\Translate\TranslateTrait;
 use DejwCake\Helpers\Model\Entity\EnableTrait;
 use DejwCake\StandardAuth\Model\Entity\User;
 
 /**
- * Setting Entity
+ * Page Entity
  *
  * @property int $id
- * @property string $setting_key
- * @property string $value
+ * @property string $title
+ * @property string $slug
+ * @property string $perex
+ * @property string $text
+ * @property string $view
  * @property bool $enabled
  * @property int $created_by
  * @property \Cake\I18n\Time $created
@@ -19,8 +23,9 @@ use DejwCake\StandardAuth\Model\Entity\User;
  *
  * @property User $user
  */
-class Setting extends Entity
+class Page extends Entity
 {
+    use TranslateTrait;
     use EnableTrait;
 
     /**

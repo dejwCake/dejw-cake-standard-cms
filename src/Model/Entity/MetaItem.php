@@ -2,25 +2,28 @@
 namespace DejwCake\StandardCMS\Model\Entity;
 
 use Cake\ORM\Entity;
+use Cake\ORM\Behavior\Translate\TranslateTrait;
 use DejwCake\Helpers\Model\Entity\EnableTrait;
-use DejwCake\StandardAuth\Model\Entity\User;
 
 /**
- * Setting Entity
+ * MetaItem Entity
  *
  * @property int $id
- * @property string $setting_key
- * @property string $value
+ * @property int $entity_id
+ * @property string $entity_class
+ * @property string $title
+ * @property string $keywords
+ * @property string $description
  * @property bool $enabled
- * @property int $created_by
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  * @property \Cake\I18n\Time $deleted
  *
- * @property User $user
+ * @property \DejwCake\StandardCMS\Model\Entity\Entity $entity
  */
-class Setting extends Entity
+class MetaItem extends Entity
 {
+    use TranslateTrait;
     use EnableTrait;
 
     /**
