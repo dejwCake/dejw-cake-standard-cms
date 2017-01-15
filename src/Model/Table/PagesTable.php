@@ -42,17 +42,18 @@ class PagesTable extends Table
 
         $this->addBehavior('Timestamp');
         $this->addBehavior('Muffin/Trash.Trash');
-        $this->addBehavior('Translate', ['fields' => ['title', 'slug', 'perex', 'text'], 'translationTable' => 'PagesI18n']);
         $this->addBehavior('DejwCake/Helpers.Sluggable');
+        $this->addBehavior('DejwCake/StandardCMS.MetaItem');
+        $this->addBehavior('Translate', ['fields' => ['title', 'slug', 'perex', 'text'], 'translationTable' => 'PagesI18n']);
 
         $this->belongsTo('Users', [
             'foreignKey' => 'created_by',
             'className' => 'Users'
         ]);
         $this->hasOne('MetaItems', [
-            'className' => 'MetaItems',
+            'className' => 'DejwCake/StandardCMS.MetaItems',
             'foreignKey' => 'entity_id',
-            'conditions' => ['MetaItems.entity_class' => \DejwCake\StandardCMS\Model\Entity\Page::class],
+            'conditions' => ['MetaItems.entity_class' => 'DejwCake\\StandardCMS\\Model\\Entity\\Page'],
             'dependent' => true,
             'cascadeCallbacks' => true,
         ]);
@@ -70,9 +71,9 @@ class PagesTable extends Table
         $translationValidator
             ->requirePresence('title', 'create')
             ->notEmpty('title');
-        $translationValidator
-            ->requirePresence('slug', 'create')
-            ->notEmpty('slug');
+//        $translationValidator
+//            ->requirePresence('slug', 'create')
+//            ->notEmpty('slug');
         $translationValidator
             ->allowEmpty('perex');
         $translationValidator
@@ -87,10 +88,10 @@ class PagesTable extends Table
             ->notEmpty('title')
             ->add('title', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
-        $validator
-            ->requirePresence('slug', 'create')
-            ->notEmpty('slug')
-            ->add('slug', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+//        $validator
+//            ->requirePresence('slug', 'create')
+//            ->notEmpty('slug')
+//            ->add('slug', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->allowEmpty('perex');

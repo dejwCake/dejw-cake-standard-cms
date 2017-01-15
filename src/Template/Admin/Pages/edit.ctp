@@ -1,7 +1,7 @@
 <section class="content-header">
     <h1>
-        Meta Item
-        <small><?= __('Add') ?></small>
+        Page
+        <small><?= __('Edit') ?></small>
     </h1>
     <ol class="breadcrumb">
         <li>
@@ -22,9 +22,10 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <?= $this->Form->create($metaItem, array('role' => 'form')) ?>
+                <?= $this->Form->create($page, array('role' => 'form')) ?>
                 <div class="box-body">
                     <?php
+                        echo $this->Form->input('view');
                         echo $this->Form->input('enabled');
                     ?>
                     <div class="nav-tabs-custom">
@@ -44,12 +45,20 @@
                                 <?php
                                     if($languageSettings['locale'] == $defaultLocale){
                                         echo $this->Form->input('title');
-                                        echo $this->Form->input('keywords');
-                                        echo $this->Form->input('description');
+                                        echo $this->Form->input('perex', ['class' => 'ckeditor']);
+                                        echo $this->Form->input('text', ['class' => 'ckeditor']);
+
+                                        echo $this->Form->input('meta_item.title');
+                                        echo $this->Form->input('meta_item.keywords');
+                                        echo $this->Form->input('meta_item.description');
                                     } else {
                                         echo $this->Form->input('_translations.' . $languageSettings['locale'] . '.title');
-                                        echo $this->Form->input('_translations.' . $languageSettings['locale'] . '.keywords');
-                                        echo $this->Form->input('_translations.' . $languageSettings['locale'] . '.description');
+                                        echo $this->Form->input('_translations.' . $languageSettings['locale'] . '.perex', ['class' => 'ckeditor']);
+                                        echo $this->Form->input('_translations.' . $languageSettings['locale'] . '.text', ['class' => 'ckeditor']);
+
+                                        echo $this->Form->input('meta_item._translations.' . $languageSettings['locale'] . '.title');
+                                        echo $this->Form->input('meta_item._translations.' . $languageSettings['locale'] . '.keywords');
+                                        echo $this->Form->input('meta_item._translations.' . $languageSettings['locale'] . '.description');
                                     }
                                 ?>
                             </div>
@@ -79,6 +88,12 @@
 <?php $this->start('scriptBottom'); ?>
 <?php echo $this->Html->script('DejwCake/AdminLTE./plugins/iCheck/icheck.min.js'); ?>
 <?php echo $this->Html->script('DejwCake/AdminLTE./plugins/select2/select2.full.min.js'); ?>
+<?php echo $this->Html->script('https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js'); ?>
+    <script type="text/javascript">
+        $(function () {
+            CKEDITOR.replaceAll('ckeditor');
+        });
+    </script>
     <script type="text/javascript">
         $(".select2").select2();
         $(function () {

@@ -59,9 +59,9 @@ class PagesFixture extends TestFixture
             'view' => 'Lorem ipsum dolor sit amet',
             'enabled' => 1,
             'created_by' => 1,
-            'created' => '2017-01-11 22:15:40',
-            'modified' => '2017-01-11 22:15:40',
-            'deleted' => '2017-01-11 22:15:40'
+            'created' => '2017-01-14 17:41:48',
+            'modified' => '2017-01-14 17:41:48',
+            'deleted' => '2017-01-14 17:41:48'
         ],
     ];
 }

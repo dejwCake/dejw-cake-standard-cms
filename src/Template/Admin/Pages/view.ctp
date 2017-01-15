@@ -1,6 +1,6 @@
 <section class="content-header">
   <h1>
-    <?php echo __('Meta Item'); ?>
+    <?php echo __('Page'); ?>
   </h1>
   <ol class="breadcrumb">
     <li>
@@ -23,56 +23,71 @@
                 <dl class="dl-horizontal">
                     <dt><?= __('Title ({0})', $supportedLanguages[$defaultLanguage]['title']) ?></dt>
                     <dd>
-                        <?= h($metaItem->title) ?>
+                        <?= h($page->title) ?>
                     </dd>
                     <?php foreach ($supportedLanguages as $language => $languageSettings): ?>
                         <?php if($languageSettings['locale'] == $defaultLocale) { continue; } ?>
                     <dt><?= __('Title ({0})', $languageSettings['title']) ?></dt>
                     <dd>
-                        <?= h($metaItem->translation($languageSettings['locale'])->title) ?>
+                        <?= h($page->translation($languageSettings['locale'])->title) ?>
                     </dd>
                     <?php endforeach; ?>
-                    <dt><?= __('Keywords ({0})', $supportedLanguages[$defaultLanguage]['title']) ?></dt>
+                    <dt><?= __('Slug ({0})', $supportedLanguages[$defaultLanguage]['title']) ?></dt>
                     <dd>
-                        <?= h($metaItem->keywords) ?>
+                        <?= h($page->slug) ?>
                     </dd>
                     <?php foreach ($supportedLanguages as $language => $languageSettings): ?>
                         <?php if($languageSettings['locale'] == $defaultLocale) { continue; } ?>
-                    <dt><?= __('Keywords ({0})', $languageSettings['title']) ?></dt>
+                    <dt><?= __('Slug ({0})', $languageSettings['title']) ?></dt>
                     <dd>
-                        <?= h($metaItem->translation($languageSettings['locale'])->keywords) ?>
+                        <?= h($page->translation($languageSettings['locale'])->slug) ?>
                     </dd>
                     <?php endforeach; ?>
-                    <dt><?= __('Description ({0})', $supportedLanguages[$defaultLanguage]['title']) ?></dt>
+                    <dt><?= __('View') ?></dt>
                     <dd>
-                        <?= h($metaItem->description) ?>
+                        <?= h($page->view) ?>
                     </dd>
-                    <?php foreach ($supportedLanguages as $language => $languageSettings): ?>
-                        <?php if($languageSettings['locale'] == $defaultLocale) { continue; } ?>
-                    <dt><?= __('Description ({0})', $languageSettings['title']) ?></dt>
+                    <dt><?= __('User') ?></dt>
                     <dd>
-                        <?= h($metaItem->translation($languageSettings['locale'])->description) ?>
+                        <?= $page->has('user') ? $page->user->id : '' ?>
                     </dd>
-                    <?php endforeach; ?>
-                    <dt><?= __('Entity Id') ?></dt>
+                    <dt><?= __('Meta Item') ?></dt>
                     <dd>
-                        <?= $this->Number->format($metaItem->entity_id) ?>
-                    </dd>
-                    <dt><?= __('Entity Class') ?></dt>
-                    <dd>
-                        <?= $this->Number->format($metaItem->entity_class) ?>
+                        <?= $page->has('meta_item') ? $this->Html->link($page->meta_item->title, ['controller' => 'MetaItems', 'action' => 'view', $page->meta_item->id]) : '' ?>
                     </dd>
                     <dt><?= __('Enabled') ?></dt>
                     <dd>
-                        <?= $metaItem->enabled ? __('Yes') : __('No'); ?>
+                        <?= $page->enabled ? __('Yes') : __('No'); ?>
                     </dd>
+                    <dt><?= __('Perex ({0})', $supportedLanguages[$defaultLanguage]['title']) ?></dt>
+                    <dd>
+                        <?= $this->Text->autoParagraph($page->perex) ?>
+                    </dd>
+                    <?php foreach ($supportedLanguages as $language => $languageSettings): ?>
+                        <?php if($languageSettings['locale'] == $defaultLocale) { continue; } ?>
+                    <dt><?= __('Perex ({0})', $languageSettings['title']) ?></dt>
+                    <dd>
+                        <?= $this->Text->autoParagraph($page->translation($languageSettings['locale'])->perex) ?>
+                    </dd>
+                    <?php endforeach; ?>
+                    <dt><?= __('Text ({0})', $supportedLanguages[$defaultLanguage]['title']) ?></dt>
+                    <dd>
+                        <?= $this->Text->autoParagraph($page->text) ?>
+                    </dd>
+                    <?php foreach ($supportedLanguages as $language => $languageSettings): ?>
+                        <?php if($languageSettings['locale'] == $defaultLocale) { continue; } ?>
+                    <dt><?= __('Text ({0})', $languageSettings['title']) ?></dt>
+                    <dd>
+                        <?= $this->Text->autoParagraph($page->translation($languageSettings['locale'])->text) ?>
+                    </dd>
+                    <?php endforeach; ?>
                     <dt><?= __('Created') ?></dt>
                     <dd>
-                        <?= h($metaItem->created) ?>
+                        <?= h($page->created) ?>
                     </dd>
                     <dt><?= __('Modified') ?></dt>
                     <dd>
-                        <?= h($metaItem->modified) ?>
+                        <?= h($page->modified) ?>
                     </dd>
                 </dl>
             </div>

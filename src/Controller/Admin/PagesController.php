@@ -16,9 +16,7 @@ use Cake\Log\Log;
 class PagesController extends AppController
 {
 
-    //TODO add views
-    //TODO add _getViews to fill selectbox for selecting layout
-    //TODO add maybe downloadTranslations
+    //TODO add metaitem to views
     //TODO add created_by also to metaitems
 
 
@@ -58,8 +56,10 @@ class PagesController extends AppController
         ];
         $pages = $this->paginate($this->Pages);
 
+        $views = $this->getViews();
         $this->set(compact('pages'));
-        $this->set('_serialize', ['pages']);
+        $this->set(compact('views'));
+        $this->set('_serialize', ['pages', 'views']);
     }
 
     /**
@@ -73,7 +73,7 @@ class PagesController extends AppController
     {
         $page = $this->Pages->find('translations', [
             'contain' => ['Users', 'MetaItems']
-        ])->where(['id' => $id])->firstOrFail();
+        ])->where(['Pages.id' => $id])->firstOrFail();
 
         $this->set('page', $page);
         $this->set('_serialize', ['page']);
@@ -92,6 +92,7 @@ class PagesController extends AppController
             $page = $this->Pages->patchEntity($page, $this->request->data, [
                 'translations' => true
             ]);
+            debug($page);
             if ($this->Pages->save($page)) {
                 $this->Flash->success(__('The page has been saved.'));
 
@@ -101,8 +102,10 @@ class PagesController extends AppController
                 $this->Flash->error(__('The page could not be saved. Please, try again.'));
             }
         }
+        $views = $this->getViews();
         $this->set(compact('page'));
-        $this->set('_serialize', ['page']);
+        $this->set(compact('views'));
+        $this->set('_serialize', ['page', 'views']);
     }
 
     /**
@@ -115,24 +118,27 @@ class PagesController extends AppController
     public function edit($id = null)
     {
         $page = $this->Pages->find('translations', [
-            'contain' => []
-        ])->where(['id' => $id])->firstOrFail();
+            'contain' => ['MetaItems' => ['finder' => 'translations']]
+        ])->where(['Pages.id' => $id])->firstOrFail();
+//        debug($page);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $page = $this->Pages->patchEntity($page, $this->request->data, [
                 'translations' => true
             ]);
+//            debug($page);
             if ($this->Pages->save($page)) {
                 $this->Flash->success(__('The page has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+//                return $this->redirect(['action' => 'index']);
             } else {
                 Log::error('Entity could not be saved. Entity: '.var_export($page, true));
                 $this->Flash->error(__('The page could not be saved. Please, try again.'));
             }
         }
-        $page = $this->editTranslated($page);
+        $views = $this->getViews();
         $this->set(compact('page'));
-        $this->set('_serialize', ['page']);
+        $this->set(compact('views'));
+        $this->set('_serialize', ['page', 'views']);
     }
 
     /**
@@ -175,5 +181,9 @@ class PagesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    protected function getViews() {
+        return array('default' => __('Default'), 'view_contact' => __('Contact'));
     }
 }

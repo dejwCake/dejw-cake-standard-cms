@@ -24,5 +24,13 @@ Router::prefix('admin', ['_namePrefix' => 'admin:'], function ($routes) {
                 $routes->connect('/delete/:id', ['controller' => 'MetaItems', 'action' => 'delete', 'plugin' => 'DejwCake/StandardCMS'], ['pass' => ['id'],]);
                 $routes->connect('/enable/:id', ['controller' => 'MetaItems', 'action' => 'enable', 'plugin' => 'DejwCake/StandardCMS'], ['pass' => ['id'],]);
             });
+            $routes->scope('/pages', function (RouteBuilder $routes) {
+                $routes->connect('/', ['controller' => 'Pages', 'action' => 'index', 'plugin' => 'DejwCake/StandardCMS']);
+                $routes->connect('/add', ['controller' => 'Pages', 'action' => 'add', 'plugin' => 'DejwCake/StandardCMS']);
+                $routes->connect('/view/:id', ['controller' => 'Pages', 'action' => 'view', 'plugin' => 'DejwCake/StandardCMS'], ['pass' => ['id'],]);
+                $routes->connect('/edit/:id', ['controller' => 'Pages', 'action' => 'edit', 'plugin' => 'DejwCake/StandardCMS'], ['pass' => ['id'],]);
+                $routes->connect('/delete/:id', ['controller' => 'Pages', 'action' => 'delete', 'plugin' => 'DejwCake/StandardCMS'], ['pass' => ['id'],]);
+                $routes->connect('/enable/:id', ['controller' => 'Pages', 'action' => 'enable', 'plugin' => 'DejwCake/StandardCMS'], ['pass' => ['id'],]);
+            });
         });
 });

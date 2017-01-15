@@ -37,13 +37,9 @@ class CreateMetaItems extends AbstractMigration
         $table->addColumn('enabled', 'boolean', [
             'default' => true,
         ]);
-        $table->addColumn('created', 'datetime', [
-            'default' => null,
-            'null' => false,
-        ]);
+        $table->addColumn('created', 'datetime');
         $table->addColumn('modified', 'datetime', [
             'default' => null,
-            'null' => false,
         ]);
         $table->addColumn('deleted', 'datetime', [
             'default' => null,

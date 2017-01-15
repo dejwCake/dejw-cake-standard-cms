@@ -82,10 +82,12 @@ class MetaItemsController extends AppController
             $metaItem = $this->MetaItems->patchEntity($metaItem, $this->request->data, [
                 'translations' => true
             ]);
+            debug($metaItem);
             if ($this->MetaItems->save($metaItem)) {
+                debug($metaItem);
                 $this->Flash->success(__('The meta item has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+//                return $this->redirect(['action' => 'index']);
             } else {
                 Log::error('Entity could not be saved. Entity: '.var_export($metaItem, true));
                 $this->Flash->error(__('The meta item could not be saved. Please, try again.'));
@@ -120,7 +122,6 @@ class MetaItemsController extends AppController
                 $this->Flash->error(__('The meta item could not be saved. Please, try again.'));
             }
         }
-        $metaItem = $this->editTranslated($metaItem);
         $this->set(compact('metaItem'));
         $this->set('_serialize', ['metaItem']);
     }
