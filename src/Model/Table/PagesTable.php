@@ -71,9 +71,6 @@ class PagesTable extends Table
         $translationValidator
             ->requirePresence('title', 'create')
             ->notEmpty('title');
-//        $translationValidator
-//            ->requirePresence('slug', 'create')
-//            ->notEmpty('slug');
         $translationValidator
             ->allowEmpty('perex');
         $translationValidator
@@ -87,11 +84,6 @@ class PagesTable extends Table
             ->requirePresence('title', 'create')
             ->notEmpty('title')
             ->add('title', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
-
-//        $validator
-//            ->requirePresence('slug', 'create')
-//            ->notEmpty('slug')
-//            ->add('slug', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->allowEmpty('perex');
@@ -125,5 +117,12 @@ class PagesTable extends Table
         $rules->add($rules->existsIn(['created_by'], 'Users'));
 
         return $rules;
+    }
+
+    /**
+     * @return array
+     */
+    public function getViews() {
+        return ['default' => __('Default'), 'view_contact' => __('Contact')];
     }
 }

@@ -41,7 +41,7 @@ class PagesController extends AppController
      * @return bool True if $user is authorized, otherwise false
      */
     public function isAuthorized($user = null) {
-        return parent::isAuthorized($user);;
+        return parent::isAuthorized($user);
     }
 
         /**
@@ -56,10 +56,9 @@ class PagesController extends AppController
         ];
         $pages = $this->paginate($this->Pages);
 
-        $views = $this->getViews();
-        $this->set(compact('pages'));
-        $this->set(compact('views'));
-        $this->set('_serialize', ['pages', 'views']);
+        $views = $this->Pages->getViews();
+        $this->set(compact('pages', 'views'));
+        $this->set('_serialize', ['pages']);
     }
 
     /**
@@ -75,7 +74,8 @@ class PagesController extends AppController
             'contain' => ['Users', 'MetaItems']
         ])->where(['Pages.id' => $id])->firstOrFail();
 
-        $this->set('page', $page);
+        $views = $this->Pages->getViews();
+        $this->set(compact('page', 'views'));
         $this->set('_serialize', ['page']);
     }
 
@@ -102,10 +102,9 @@ class PagesController extends AppController
                 $this->Flash->error(__('The page could not be saved. Please, try again.'));
             }
         }
-        $views = $this->getViews();
-        $this->set(compact('page'));
-        $this->set(compact('views'));
-        $this->set('_serialize', ['page', 'views']);
+        $views = $this->Pages->getViews();
+        $this->set(compact('page', 'views'));
+        $this->set('_serialize', ['page']);
     }
 
     /**
@@ -135,10 +134,9 @@ class PagesController extends AppController
                 $this->Flash->error(__('The page could not be saved. Please, try again.'));
             }
         }
-        $views = $this->getViews();
-        $this->set(compact('page'));
-        $this->set(compact('views'));
-        $this->set('_serialize', ['page', 'views']);
+        $views = $this->Pages->getViews();
+        $this->set(compact('page', 'views'));
+        $this->set('_serialize', ['page']);
     }
 
     /**
@@ -181,9 +179,5 @@ class PagesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
-    }
-
-    protected function getViews() {
-        return array('default' => __('Default'), 'view_contact' => __('Contact'));
     }
 }

@@ -45,7 +45,7 @@
                     <?php endforeach; ?>
                     <dt><?= __('View') ?></dt>
                     <dd>
-                        <?= h($page->view) ?>
+                        <?= h($views[$page->view]) ?>
                     </dd>
                     <dt><?= __('User') ?></dt>
                     <dd>
