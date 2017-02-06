@@ -22,7 +22,7 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <?= $this->Form->create($setting, array('role' => 'form')) ?>
+                <?= $this->Form->create($setting, ['role' => 'form']) ?>
                 <div class="box-body">
                     <?php
                         echo $this->Form->input('setting_key');

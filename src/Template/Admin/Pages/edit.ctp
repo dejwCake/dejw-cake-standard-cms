@@ -22,7 +22,7 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <?= $this->Form->create($page, array('role' => 'form')) ?>
+                <?= $this->Form->create($page, ['role' => 'form']) ?>
                 <div class="box-body">
                     <?php
                         echo $this->Form->input('view');
