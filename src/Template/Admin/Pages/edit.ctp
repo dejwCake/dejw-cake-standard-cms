@@ -79,13 +79,13 @@
     </div>
 </section>
 
-<?php $this->start('css'); ?>
+<?php $this->append('css'); ?>
 <?php echo $this->Html->css('DejwCake/AdminLTE./plugins/iCheck/all.css'); ?>
 <?php $this->end(); ?>
-<?php $this->start('cssFirst'); ?>
+<?php $this->append('cssFirst'); ?>
 <?php echo $this->Html->css('DejwCake/AdminLTE./plugins/select2/select2.min.css'); ?>
 <?php $this->end(); ?>
-<?php $this->start('scriptBottom'); ?>
+<?php $this->append('scriptBottom'); ?>
 <?php echo $this->Html->script('DejwCake/AdminLTE./plugins/iCheck/icheck.min.js'); ?>
 <?php echo $this->Html->script('DejwCake/AdminLTE./plugins/select2/select2.full.min.js'); ?>
 <?php echo $this->Html->script('https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js'); ?>
