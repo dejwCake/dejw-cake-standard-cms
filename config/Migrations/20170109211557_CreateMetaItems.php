@@ -22,7 +22,6 @@ class CreateMetaItems extends AbstractMigration
         ]);
         $table->addIndex(['entity_class',]);
         $table->addIndex(['entity_id', 'entity_class'], [
-            'name' => 'I18N_ENTITY_UNIQUE',
             'unique' => true,
         ]);
         $table->addColumn('title', 'string', [

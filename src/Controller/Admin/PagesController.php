@@ -92,7 +92,6 @@ class PagesController extends AppController
             $page = $this->Pages->patchEntity($page, $this->request->data, [
                 'translations' => true
             ]);
-            debug($page);
             if ($this->Pages->save($page)) {
                 $this->Flash->success(__('The page has been saved.'));
 
@@ -124,11 +123,10 @@ class PagesController extends AppController
             $page = $this->Pages->patchEntity($page, $this->request->data, [
                 'translations' => true
             ]);
-//            debug($page);
             if ($this->Pages->save($page)) {
                 $this->Flash->success(__('The page has been saved.'));
 
-//                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'index']);
             } else {
                 Log::error('Entity could not be saved. Entity: '.var_export($page, true));
                 $this->Flash->error(__('The page could not be saved. Please, try again.'));
