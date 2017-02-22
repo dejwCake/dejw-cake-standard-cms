@@ -11,16 +11,15 @@ class MetaItemBehavior extends Behavior
 {
     public function afterSave(Event $event, EntityInterface $entity)
     {
-        $metaItem = $entity->meta_item;
-        $metaItem = TableRegistry::get('DejwCake/StandardCMS.MetaItems')->patchEntity($metaItem, [
-            'entity_class' => get_class($entity),
-        ], [
-            'validate' => false,
-        ]);
-        if (TableRegistry::get('DejwCake/StandardCMS.MetaItems')->save($metaItem)) {
-            return;
-        } else {
-            return false;
+        if(!empty($metaItem = $entity->meta_item)) {
+            $metaItem = TableRegistry::get('DejwCake/StandardCMS.MetaItems')->patchEntity($metaItem, [
+                'entity_class' => get_class($entity),
+            ], ['validate' => false,]);
+            if (TableRegistry::get('DejwCake/StandardCMS.MetaItems')->save($metaItem)) {
+                return;
+            } else {
+                return false;
+            }
         }
     }
 
