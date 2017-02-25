@@ -1,6 +1,6 @@
 <section class="content-header">
     <h1>
-        Setting
+        <?= __('Setting') ?>
         <small><?= __('Add') ?></small>
     </h1>
     <ol class="breadcrumb">

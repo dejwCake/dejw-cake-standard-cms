@@ -1,6 +1,6 @@
 <section class="content-header">
     <h1>
-        Page
+        <?= __('Page') ?>
         <small><?= __('Edit') ?></small>
     </h1>
     <ol class="breadcrumb">

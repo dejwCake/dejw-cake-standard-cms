@@ -1,6 +1,6 @@
 <section class="content-header">
     <h1>
-        Meta Item
+        <?= __('Meta Item') ?>
         <small><?= __('Edit') ?></small>
     </h1>
     <ol class="breadcrumb">
