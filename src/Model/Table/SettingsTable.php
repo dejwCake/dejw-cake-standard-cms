@@ -85,7 +85,7 @@ class SettingsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         //TODO change to support deleted
-        $rules->add($rules->isUnique(['setting_key', 'deleted'], ['allowMultipleNulls' => false, 'message' => 'This value is not unique']));
+        $rules->add($rules->isUnique(['setting_key', 'deleted'], ['allowMultipleNulls' => false, 'message' => __d('dejw_cake_standard_cms', 'This value is not unique.')]));
         $rules->add($rules->existsIn(['created_by'], 'Users'));
 
         return $rules;

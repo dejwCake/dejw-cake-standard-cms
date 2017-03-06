@@ -1,11 +1,11 @@
 <section class="content-header">
     <h1>
-        <?= __('Setting') ?>
-        <small><?= __('Edit') ?></small>
+        <?= __d('dejw_cake_standard_cms', 'Setting') ?>
+        <small><?= __d('dejw_cake_standard_cms', 'Edit') ?></small>
     </h1>
     <ol class="breadcrumb">
         <li>
-            <?= $this->Html->link('<i class="fa fa-dashboard"></i> ' . __('Back'), ['action' => 'index'], ['escape' => false]) ?>
+            <?= $this->Html->link('<i class="fa fa-dashboard"></i> ' . __d('dejw_cake_standard_cms', 'Back'), ['action' => 'index'], ['escape' => false]) ?>
         </li>
     </ol>
 </section>
@@ -18,7 +18,7 @@
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title"><?= __('Form') ?></h3>
+                    <h3 class="box-title"><?= __d('dejw_cake_standard_cms', 'Form') ?></h3>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
@@ -32,7 +32,7 @@
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
-                    <?= $this->Form->button(__('Save')) ?>
+                    <?= $this->Form->button(__d('dejw_cake_standard_cms', 'Save')) ?>
                 </div>
                 <?= $this->Form->end() ?>
             </div>

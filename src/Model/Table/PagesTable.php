@@ -112,8 +112,8 @@ class PagesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->isUnique(['title', 'deleted'], ['allowMultipleNulls' => false, 'message' => 'This value is not unique']));
-        $rules->add($rules->isUnique(['slug', 'deleted'], ['allowMultipleNulls' => false, 'message' => 'This value is not unique']));
+        $rules->add($rules->isUnique(['title', 'deleted'], ['allowMultipleNulls' => false, 'message' => __d('dejw_cake_standard_cms', 'This value is not unique.')]));
+        $rules->add($rules->isUnique(['slug', 'deleted'], ['allowMultipleNulls' => false, 'message' => __d('dejw_cake_standard_cms', 'This value is not unique.')]));
         $rules->add($rules->existsIn(['created_by'], 'Users'));
 
         return $rules;
@@ -123,6 +123,6 @@ class PagesTable extends Table
      * @return array
      */
     public function getViews() {
-        return ['default' => __('Default'), 'view_contact' => __('Contact')];
+        return ['default' => __d('dejw_cake_standard_cms', 'Default'), 'view_contact' => __d('dejw_cake_standard_cms', 'Contact')];
     }
 }

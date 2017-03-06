@@ -93,12 +93,12 @@ class PagesController extends AppController
                 'translations' => true
             ]);
             if ($this->Pages->save($page)) {
-                $this->Flash->success(__('The page has been saved.'));
+                $this->Flash->success(__d('dejw_cake_standard_cms', 'The page has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
                 Log::error('Entity could not be saved. Entity: '.var_export($page, true));
-                $this->Flash->error(__('The page could not be saved. Please, try again.'));
+                $this->Flash->error(__d('dejw_cake_standard_cms', 'The page could not be saved. Please, try again.'));
             }
         }
         $views = $this->Pages->getViews();
@@ -124,12 +124,12 @@ class PagesController extends AppController
                 'translations' => true
             ]);
             if ($this->Pages->save($page)) {
-                $this->Flash->success(__('The page has been saved.'));
+                $this->Flash->success(__d('dejw_cake_standard_cms', 'The page has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
                 Log::error('Entity could not be saved. Entity: '.var_export($page, true));
-                $this->Flash->error(__('The page could not be saved. Please, try again.'));
+                $this->Flash->error(__d('dejw_cake_standard_cms', 'The page could not be saved. Please, try again.'));
             }
         }
         $views = $this->Pages->getViews();
@@ -149,9 +149,9 @@ class PagesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $page = $this->Pages->get($id);
         if ($this->Pages->delete($page)) {
-            $this->Flash->success(__('The page has been deleted.'));
+            $this->Flash->success(__d('dejw_cake_standard_cms', 'The page has been deleted.'));
         } else {
-            $this->Flash->error(__('The page could not be deleted. Please, try again.'));
+            $this->Flash->error(__d('dejw_cake_standard_cms', 'The page could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
@@ -171,9 +171,9 @@ class PagesController extends AppController
 
         $page->changeEnableStatus();
         if ($this->Pages->save($page)) {
-            $this->Flash->success(__('The page status has been changed.'));
+            $this->Flash->success(__d('dejw_cake_standard_cms', 'The page status has been changed.'));
         } else {
-            $this->Flash->error(__('The page status could not be changed. Please, try again.'));
+            $this->Flash->error(__d('dejw_cake_standard_cms', 'The page status could not be changed. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

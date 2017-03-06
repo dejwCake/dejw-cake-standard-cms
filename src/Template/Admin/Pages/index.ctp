@@ -1,8 +1,8 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Pages
-        <div class="pull-right"><?= $this->Html->link(__('New'), ['action' => 'add'], ['class' => 'btn btn-success btn-xs']) ?></div>
+        <?= __d('dejw_cake_standard_cms', 'Pages') ?>
+        <div class="pull-right"><?= $this->Html->link(__d('dejw_cake_standard_cms', 'New'), ['action' => 'add'], ['class' => 'btn btn-success btn-xs']) ?></div>
     </h1>
 </section>
 
@@ -12,7 +12,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title"><?= __('List of') ?> Pages</h3>
+                    <h3 class="box-title"><?= __d('dejw_cake_standard_cms', 'List of Pages') ?></h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -26,7 +26,7 @@
                                 <th scope="col"><?= $this->Paginator->sort('enabled') ?></th>
                                 <!--<th scope="col"><?= $this->Paginator->sort('created') ?></th>-->
                                 <!--<th scope="col"><?= $this->Paginator->sort('modified') ?></th>-->
-                                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                                <th scope="col" class="actions"><?= __d('dejw_cake_standard_cms', 'Actions') ?></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,22 +37,22 @@
                                 <td><?= h($page->slug) ?></td>
                                 <td><?= h($views[$page->view]) ?></td>
                                 <td>
-                                    <?= $page->enabled ? __('Yes') : __('No') ?>
+                                    <?= $page->enabled ? __d('dejw_cake_standard_cms', 'Yes') : __d('dejw_cake_standard_cms', 'No') ?>
                                     &nbsp;
                                     <?php
                                         if ($page->enabled) {
-                                            echo $this->Form->postLink(__('Disable'), ['action' => 'enable', $page->id], ['escape' => false, 'confirm' => __('Are you sure you want to disable this entry?'), 'class' => 'btn btn-default btn-xs']);
+                                            echo $this->Form->postLink(__d('dejw_cake_standard_cms', 'Disable'), ['action' => 'enable', $page->id], ['escape' => false, 'confirm' => __d('dejw_cake_standard_cms', 'Are you sure you want to disable this entry?'), 'class' => 'btn btn-default btn-xs']);
                                         } else {
-                                            echo $this->Form->postLink(__('Enable'), ['action' => 'enable', $page->id], ['escape' => false, 'confirm' => __('Are you sure you want to enable this entry?'), 'class' => 'btn btn-default btn-xs']);
+                                            echo $this->Form->postLink(__d('dejw_cake_standard_cms', 'Enable'), ['action' => 'enable', $page->id], ['escape' => false, 'confirm' => __d('dejw_cake_standard_cms', 'Are you sure you want to enable this entry?'), 'class' => 'btn btn-default btn-xs']);
                                         }
                                     ?>
                                 </td>
                                 <!--<td><?= h($page->created) ?></td>-->
                                 <!--<td><?= h($page->modified) ?></td>-->
                                 <td class="actions" style="white-space:nowrap">
-                                    <?= $this->Html->link(__('View'), ['action' => 'view', $page->id], ['escape' => false, 'class' => 'btn btn-info btn-xs']) ?>
-                                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $page->id], ['escape' => false, 'class' => 'btn btn-warning btn-xs']) ?>
-                                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $page->id], ['escape' => false, 'confirm' => __('Are you sure you want to delete this entry?'), 'class' => 'btn btn-danger btn-xs']) ?>
+                                    <?= $this->Html->link(__d('dejw_cake_standard_cms', 'View'), ['action' => 'view', $page->id], ['escape' => false, 'class' => 'btn btn-info btn-xs']) ?>
+                                    <?= $this->Html->link(__d('dejw_cake_standard_cms', 'Edit'), ['action' => 'edit', $page->id], ['escape' => false, 'class' => 'btn btn-warning btn-xs']) ?>
+                                    <?= $this->Form->postLink(__d('dejw_cake_standard_cms', 'Delete'), ['action' => 'delete', $page->id], ['escape' => false, 'confirm' => __d('dejw_cake_standard_cms', 'Are you sure you want to delete this entry?'), 'class' => 'btn btn-danger btn-xs']) ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -66,7 +66,7 @@
                             <th scope="col"><?= $this->Paginator->sort('enabled') ?></th>
                             <!--<th scope="col"><?= $this->Paginator->sort('created') ?></th>-->
                             <!--<th scope="col"><?= $this->Paginator->sort('modified') ?></th>-->
-                            <th scope="col" class="actions"><?= __('Actions') ?></th>
+                            <th scope="col" class="actions"><?= __d('dejw_cake_standard_cms', 'Actions') ?></th>
                         </tr>
                         </tfoot>
                     </table>

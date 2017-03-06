@@ -93,12 +93,12 @@ class SettingsController extends AppController
             $this->request->data('created_by', $this->Auth->user('id'));
             $setting = $this->Settings->patchEntity($setting, $this->request->data);
             if ($this->Settings->save($setting)) {
-                $this->Flash->success(__('The setting has been saved.'));
+                $this->Flash->success(__d('dejw_cake_standard_cms', 'The setting has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
                 Log::error('Entity could not be saved. Entity: '.var_export($setting, true));
-                $this->Flash->error(__('The setting could not be saved. Please, try again.'));
+                $this->Flash->error(__d('dejw_cake_standard_cms', 'The setting could not be saved. Please, try again.'));
             }
         }
         $this->set(compact('setting'));
@@ -120,12 +120,12 @@ class SettingsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $setting = $this->Settings->patchEntity($setting, $this->request->data);
             if ($this->Settings->save($setting)) {
-                $this->Flash->success(__('The setting has been saved.'));
+                $this->Flash->success(__d('dejw_cake_standard_cms', 'The setting has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
                 Log::error('Entity could not be saved. Entity: '.var_export($setting, true));
-                $this->Flash->error(__('The setting could not be saved. Please, try again.'));
+                $this->Flash->error(__d('dejw_cake_standard_cms', 'The setting could not be saved. Please, try again.'));
             }
         }
         $this->set(compact('setting'));
@@ -144,9 +144,9 @@ class SettingsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $setting = $this->Settings->get($id);
         if ($this->Settings->delete($setting)) {
-            $this->Flash->success(__('The setting has been deleted.'));
+            $this->Flash->success(__d('dejw_cake_standard_cms', 'The setting has been deleted.'));
         } else {
-            $this->Flash->error(__('The setting could not be deleted. Please, try again.'));
+            $this->Flash->error(__d('dejw_cake_standard_cms', 'The setting could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
@@ -166,9 +166,9 @@ class SettingsController extends AppController
 
         $setting->changeEnableStatus();
         if ($this->Settings->save($setting)) {
-            $this->Flash->success(__('The setting status has been changed.'));
+            $this->Flash->success(__d('dejw_cake_standard_cms', 'The setting status has been changed.'));
         } else {
-            $this->Flash->error(__('The setting status could not be changed. Please, try again.'));
+            $this->Flash->error(__d('dejw_cake_standard_cms', 'The setting status could not be changed. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

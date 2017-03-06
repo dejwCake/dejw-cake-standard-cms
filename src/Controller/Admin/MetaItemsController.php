@@ -85,12 +85,12 @@ class MetaItemsController extends AppController
             debug($metaItem);
             if ($this->MetaItems->save($metaItem)) {
                 debug($metaItem);
-                $this->Flash->success(__('The meta item has been saved.'));
+                $this->Flash->success(__d('dejw_cake_standard_cms', 'The meta item has been saved.'));
 
 //                return $this->redirect(['action' => 'index']);
             } else {
                 Log::error('Entity could not be saved. Entity: '.var_export($metaItem, true));
-                $this->Flash->error(__('The meta item could not be saved. Please, try again.'));
+                $this->Flash->error(__d('dejw_cake_standard_cms', 'The meta item could not be saved. Please, try again.'));
             }
         }
         $this->set(compact('metaItem'));
@@ -114,12 +114,12 @@ class MetaItemsController extends AppController
                 'translations' => true
             ]);
             if ($this->MetaItems->save($metaItem)) {
-                $this->Flash->success(__('The meta item has been saved.'));
+                $this->Flash->success(__d('dejw_cake_standard_cms', 'The meta item has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
                 Log::error('Entity could not be saved. Entity: '.var_export($metaItem, true));
-                $this->Flash->error(__('The meta item could not be saved. Please, try again.'));
+                $this->Flash->error(__d('dejw_cake_standard_cms', 'The meta item could not be saved. Please, try again.'));
             }
         }
         $this->set(compact('metaItem'));
@@ -138,9 +138,9 @@ class MetaItemsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $metaItem = $this->MetaItems->get($id);
         if ($this->MetaItems->delete($metaItem)) {
-            $this->Flash->success(__('The meta item has been deleted.'));
+            $this->Flash->success(__d('dejw_cake_standard_cms', 'The meta item has been deleted.'));
         } else {
-            $this->Flash->error(__('The meta item could not be deleted. Please, try again.'));
+            $this->Flash->error(__d('dejw_cake_standard_cms', 'The meta item could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
@@ -160,9 +160,9 @@ class MetaItemsController extends AppController
 
         $metaItem->changeEnableStatus();
         if ($this->MetaItems->save($metaItem)) {
-            $this->Flash->success(__('The meta item status has been changed.'));
+            $this->Flash->success(__d('dejw_cake_standard_cms', 'The meta item status has been changed.'));
         } else {
-            $this->Flash->error(__('The meta item status could not be changed. Please, try again.'));
+            $this->Flash->error(__d('dejw_cake_standard_cms', 'The meta item status could not be changed. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

@@ -1,0 +1,298 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2017-03-07 00:31+0100\n"
+"PO-Revision-Date: 2017-03-07 00:31+0100\n"
+"Last-Translator: \n"
+"Language-Team: EMAIL@ADDRESS\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 1.8.12\n"
+
+#: Controller/Admin/MetaItemsController.php:88;117
+msgid "The meta item has been saved."
+msgstr "Meta informácia bola uložená."
+
+#: Controller/Admin/MetaItemsController.php:93;122
+msgid "The meta item could not be saved. Please, try again."
+msgstr "Meta informáciu sa nepodarilo uložiť. Prosím, skúste ešte raz."
+
+#: Controller/Admin/MetaItemsController.php:141
+msgid "The meta item has been deleted."
+msgstr "Meta informácia bola zmazaná."
+
+#: Controller/Admin/MetaItemsController.php:143
+msgid "The meta item could not be deleted. Please, try again."
+msgstr "Meta informáciu sa nepodarilo zmazať. Prosím, skúste ešte raz."
+
+#: Controller/Admin/MetaItemsController.php:163
+msgid "The meta item status has been changed."
+msgstr "Stav meta informácie je úspešne zmenený."
+
+#: Controller/Admin/MetaItemsController.php:165
+msgid "The meta item status could not be changed. Please, try again."
+msgstr "Stav meta informácie sa nepodarilo zmeniť. Prosím, skúste ešte raz."
+
+#: Controller/Admin/PagesController.php:96;127
+msgid "The page has been saved."
+msgstr "Stránka bola úspešne uložená."
+
+#: Controller/Admin/PagesController.php:101;132
+msgid "The page could not be saved. Please, try again."
+msgstr "Stránku sa nepodarilo uložiť. Prosím, skúste ešte raz."
+
+#: Controller/Admin/PagesController.php:152
+msgid "The page has been deleted."
+msgstr "Stránka bola zmazaná."
+
+#: Controller/Admin/PagesController.php:154
+msgid "The page could not be deleted. Please, try again."
+msgstr "Stránku sa nepodarilo zmazať. Prosím, skúste ešte raz."
+
+#: Controller/Admin/PagesController.php:174
+msgid "The page status has been changed."
+msgstr "Stav stránky je úspešne zmenený."
+
+#: Controller/Admin/PagesController.php:176
+msgid "The page status could not be changed. Please, try again."
+msgstr "Stav stránky sa nepodarilo zmeniť. Prosím, skúste ešte raz."
+
+#: Controller/Admin/SettingsController.php:96;123
+msgid "The setting has been saved."
+msgstr "Nastavenie bolo uložené."
+
+#: Controller/Admin/SettingsController.php:101;128
+msgid "The setting could not be saved. Please, try again."
+msgstr "Nastavenie sa nepodarilo uložiť. Prosím, skúste ešte raz."
+
+#: Controller/Admin/SettingsController.php:147
+msgid "The setting has been deleted."
+msgstr "Nastavenie bolo zmazané."
+
+#: Controller/Admin/SettingsController.php:149
+msgid "The setting could not be deleted. Please, try again."
+msgstr "Nastavenie sa nepodarilo zmazať. Prosím, skúste ešte raz."
+
+#: Controller/Admin/SettingsController.php:169
+msgid "The setting status has been changed."
+msgstr "Stav nastavenia je úspešne zmenený."
+
+#: Controller/Admin/SettingsController.php:171
+msgid "The setting status could not be changed. Please, try again."
+msgstr "Stav nastavenia sa nepodarilo zmeniť. Prosím, skúste ešte raz."
+
+#: Model/Table/PagesTable.php:115;116 Model/Table/SettingsTable.php:88
+msgid "This value is not unique."
+msgstr "Táto hodnota musí byť jedinečná."
+
+#: Model/Table/PagesTable.php:126
+msgid "Default"
+msgstr "Predvolené"
+
+#: Model/Table/PagesTable.php:126
+msgid "Contact"
+msgstr "Kontakt"
+
+#: Template/Admin/MetaItems/add.ctp:3 Template/Admin/MetaItems/edit.ctp:3
+#: Template/Admin/MetaItems/view.ctp:3 Template/Admin/Pages/view.ctp:54
+msgid "Meta Item"
+msgstr "Meta informácia"
+
+#: Template/Admin/MetaItems/add.ctp:4 Template/Admin/Pages/add.ctp:4
+#: Template/Admin/Settings/add.ctp:4
+msgid "Add"
+msgstr "Pridať"
+
+#: Template/Admin/MetaItems/add.ctp:8 Template/Admin/MetaItems/edit.ctp:8
+#: Template/Admin/MetaItems/view.ctp:7 Template/Admin/Pages/add.ctp:8
+#: Template/Admin/Pages/edit.ctp:8 Template/Admin/Pages/view.ctp:7
+#: Template/Admin/Settings/add.ctp:8 Template/Admin/Settings/edit.ctp:8
+#: Template/Admin/Settings/view.ctp:7
+msgid "Back"
+msgstr "Späť"
+
+#: Template/Admin/MetaItems/add.ctp:21 Template/Admin/MetaItems/edit.ctp:21
+#: Template/Admin/Pages/add.ctp:21 Template/Admin/Pages/edit.ctp:21
+#: Template/Admin/Settings/add.ctp:21 Template/Admin/Settings/edit.ctp:21
+msgid "Form"
+msgstr "Formulár"
+
+#: Template/Admin/MetaItems/add.ctp:65 Template/Admin/MetaItems/edit.ctp:65
+#: Template/Admin/Pages/add.ctp:74 Template/Admin/Pages/edit.ctp:74
+#: Template/Admin/Settings/add.ctp:35 Template/Admin/Settings/edit.ctp:35
+msgid "Save"
+msgstr "Uložiť"
+
+#: Template/Admin/MetaItems/edit.ctp:4 Template/Admin/MetaItems/index.ctp:53
+#: Template/Admin/Pages/edit.ctp:4 Template/Admin/Pages/index.ctp:54
+#: Template/Admin/Settings/edit.ctp:4 Template/Admin/Settings/index.ctp:50
+msgid "Edit"
+msgstr "Zmeniť"
+
+#: Template/Admin/MetaItems/index.ctp:5
+msgid "Meta Items"
+msgstr "Meta informácie"
+
+#: Template/Admin/MetaItems/index.ctp:6 Template/Admin/Pages/index.ctp:5
+#: Template/Admin/Settings/index.ctp:5
+msgid "New"
+msgstr "Nový"
+
+#: Template/Admin/MetaItems/index.ctp:16
+msgid "List of Meta Items"
+msgstr "Zoznam meta informácií"
+
+#: Template/Admin/MetaItems/index.ctp:29;67
+#: Template/Admin/Pages/index.ctp:29;69 Template/Admin/Settings/index.ctp:27;63
+msgid "Actions"
+msgstr "Akcie"
+
+#: Template/Admin/MetaItems/index.ctp:39 Template/Admin/MetaItems/view.ctp:56
+#: Template/Admin/Pages/index.ctp:40 Template/Admin/Pages/view.ctp:60
+#: Template/Admin/Settings/index.ctp:36 Template/Admin/Settings/view.ctp:34
+msgid "Yes"
+msgstr "Áno"
+
+#: Template/Admin/MetaItems/index.ctp:39 Template/Admin/MetaItems/view.ctp:56
+#: Template/Admin/Pages/index.ctp:40 Template/Admin/Pages/view.ctp:60
+#: Template/Admin/Settings/index.ctp:36 Template/Admin/Settings/view.ctp:34
+msgid "No"
+msgstr "Nie"
+
+#: Template/Admin/MetaItems/index.ctp:43 Template/Admin/Pages/index.ctp:44
+#: Template/Admin/Settings/index.ctp:40
+msgid "Disable"
+msgstr "Zakázať"
+
+#: Template/Admin/MetaItems/index.ctp:43 Template/Admin/Pages/index.ctp:44
+#: Template/Admin/Settings/index.ctp:40
+msgid "Are you sure you want to disable this entry?"
+msgstr "Ste si istý, že chcete zakázať túto položku?"
+
+#: Template/Admin/MetaItems/index.ctp:45 Template/Admin/Pages/index.ctp:46
+#: Template/Admin/Settings/index.ctp:42
+msgid "Enable"
+msgstr "Povoliť"
+
+#: Template/Admin/MetaItems/index.ctp:45 Template/Admin/Pages/index.ctp:46
+#: Template/Admin/Settings/index.ctp:42
+msgid "Are you sure you want to enable this entry?"
+msgstr "Ste si istý, že chcete povoliť túto položku?"
+
+#: Template/Admin/MetaItems/index.ctp:52 Template/Admin/Pages/index.ctp:53
+#: Template/Admin/Pages/view.ctp:46 Template/Admin/Settings/index.ctp:49
+msgid "View"
+msgstr "Detail"
+
+#: Template/Admin/MetaItems/index.ctp:54 Template/Admin/Pages/index.ctp:55
+#: Template/Admin/Settings/index.ctp:51
+msgid "Delete"
+msgstr "Zmazať"
+
+#: Template/Admin/MetaItems/index.ctp:54 Template/Admin/Pages/index.ctp:55
+#: Template/Admin/Settings/index.ctp:51
+msgid "Are you sure you want to delete this entry?"
+msgstr "Ste si istý, že chcete vymazať túto položku?"
+
+#: Template/Admin/MetaItems/view.ctp:19 Template/Admin/Pages/view.ctp:19
+#: Template/Admin/Settings/view.ctp:19
+msgid "Information"
+msgstr "Informácie"
+
+#: Template/Admin/MetaItems/view.ctp:24
+msgid "Entity Class"
+msgstr "Trieda entity"
+
+#: Template/Admin/MetaItems/view.ctp:28;34 Template/Admin/Pages/view.ctp:24;30
+msgid "Title ({0})"
+msgstr "Názov ({0})"
+
+#: Template/Admin/MetaItems/view.ctp:39;45
+msgid "Keywords ({0})"
+msgstr "Kľúčové slová ({0})"
+
+#: Template/Admin/MetaItems/view.ctp:50
+msgid "Entity Id"
+msgstr "Id entity"
+
+#: Template/Admin/MetaItems/view.ctp:54 Template/Admin/Pages/view.ctp:58
+#: Template/Admin/Settings/view.ctp:32
+msgid "Enabled"
+msgstr "Povolené"
+
+#: Template/Admin/MetaItems/view.ctp:58;64
+msgid "Description ({0})"
+msgstr "Popis ({0})"
+
+#: Template/Admin/MetaItems/view.ctp:69 Template/Admin/Pages/view.ctp:84
+#: Template/Admin/Settings/view.ctp:40
+msgid "Created"
+msgstr "Vytvorené"
+
+#: Template/Admin/MetaItems/view.ctp:73 Template/Admin/Pages/view.ctp:88
+#: Template/Admin/Settings/view.ctp:44
+msgid "Modified"
+msgstr "Zmenené"
+
+#: Template/Admin/Pages/add.ctp:3 Template/Admin/Pages/edit.ctp:3
+#: Template/Admin/Pages/view.ctp:3
+msgid "Page"
+msgstr "Stránka"
+
+#: Template/Admin/Pages/add.ctp:28
+msgid "Select View"
+msgstr "Zvoliť rozloženie"
+
+#: Template/Admin/Pages/index.ctp:4
+msgid "Pages"
+msgstr "Stránky"
+
+#: Template/Admin/Pages/index.ctp:15
+msgid "List of Pages"
+msgstr "Zoznam stránok"
+
+#: Template/Admin/Pages/view.ctp:35;41
+msgid "Slug ({0})"
+msgstr "Link ({0})"
+
+#: Template/Admin/Pages/view.ctp:50 Template/Admin/Settings/view.ctp:28
+msgid "User"
+msgstr "Používateľ"
+
+#: Template/Admin/Pages/view.ctp:62;68
+msgid "Perex ({0})"
+msgstr "Perex ({0})"
+
+#: Template/Admin/Pages/view.ctp:73;79
+msgid "Text ({0})"
+msgstr "Text ({0})"
+
+#: Template/Admin/Settings/add.ctp:3 Template/Admin/Settings/edit.ctp:3
+#: Template/Admin/Settings/view.ctp:3
+msgid "Setting"
+msgstr "Nastavenie"
+
+#: Template/Admin/Settings/index.ctp:4
+msgid "Settings"
+msgstr "Nastavenia"
+
+#: Template/Admin/Settings/index.ctp:15
+msgid "List of Settings"
+msgstr "Zoznam nastavení"
+
+#: Template/Admin/Settings/view.ctp:24
+msgid "Key"
+msgstr "Kľúč"
+
+#: Template/Admin/Settings/view.ctp:36
+msgid "Value"
+msgstr "Hodnota"
+
+#~ msgid "List of"
+#~ msgstr "Zoznam"
