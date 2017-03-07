@@ -51,10 +51,9 @@ class PagesController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Users']
-        ];
-        $pages = $this->paginate($this->Pages);
+        $pages = $this->Pages->find('translations', [
+            'contain' => ['Users'],
+        ]);
 
         $views = $this->Pages->getViews();
         $this->set(compact('pages', 'views'));

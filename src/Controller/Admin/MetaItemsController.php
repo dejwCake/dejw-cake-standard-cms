@@ -47,7 +47,7 @@ class MetaItemsController extends AppController
      */
     public function index()
     {
-        $metaItems = $this->paginate($this->MetaItems);
+        $metaItems = $this->MetaItems->find('all');
 
         $this->set(compact('metaItems'));
         $this->set('_serialize', ['metaItems']);

@@ -47,14 +47,13 @@ class SettingsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
+        $settings = $this->Settings->find('all', [
             'contain' => ['Users' => function($q){
                 return $q->where(function ($exp, $q) {
                     return $exp->isNull('Users.deleted');
                 });
             }]
-        ];
-        $settings = $this->paginate($this->Settings);
+        ]);
 
         $this->set(compact('settings'));
         $this->set('_serialize', ['settings']);
