@@ -8,6 +8,7 @@ Router::prefix('admin', ['_namePrefix' => 'admin:'], function ($routes) {
         'DejwCake/StandardCMS',
         ['path' => '/'],
         function (RouteBuilder $routes) {
+            $routes->connect('/', ['controller' => 'Pages', 'action' => 'index', 'plugin' => 'DejwCake/StandardCMS']);
             $routes->scope('/settings', function (RouteBuilder $routes) {
                 $routes->connect('/', ['controller' => 'Settings', 'action' => 'index', 'plugin' => 'DejwCake/StandardCMS']);
                 $routes->connect('/add', ['controller' => 'Settings', 'action' => 'add', 'plugin' => 'DejwCake/StandardCMS']);
