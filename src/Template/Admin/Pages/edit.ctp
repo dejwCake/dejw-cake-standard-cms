@@ -26,7 +26,9 @@
                 <div class="box-body">
                     <?php
                         echo $this->Form->input('view');
+                        if($authUser->hasRole('superadmin')):
                         echo $this->Form->input('enabled');
+                        endif;
                     ?>
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">

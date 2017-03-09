@@ -2,7 +2,9 @@
 <section class="content-header">
     <h1>
         <?= __d('dejw_cake_standard_cms', 'Pages') ?>
+        <?php if($authUser->hasRole('superadmin')):?>
         <div class="pull-right"><?= $this->Html->link(__d('dejw_cake_standard_cms', 'New'), ['action' => 'add'], ['class' => 'btn btn-success btn-xs']) ?></div>
+        <?php endif; ?>
     </h1>
 </section>
 
@@ -23,7 +25,9 @@
                                 <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('slug') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('view') ?></th>
+                                <?php if($authUser->hasRole('superadmin')):?>
                                 <th scope="col"><?= $this->Paginator->sort('enabled') ?></th>
+                                <?php endif; ?>
                                 <!--<th scope="col"><?= $this->Paginator->sort('created') ?></th>-->
                                 <!--<th scope="col"><?= $this->Paginator->sort('modified') ?></th>-->
                                 <th scope="col" class="actions"><?= __d('dejw_cake_standard_cms', 'Actions') ?></th>
@@ -36,6 +40,7 @@
                                 <td><?= h($page->title) ?></td>
                                 <td><?= h($page->slug) ?></td>
                                 <td><?= h($views[$page->view]) ?></td>
+                                <?php if($authUser->hasRole('superadmin')):?>
                                 <td>
                                     <?= $page->enabled ? __d('dejw_cake_standard_cms', 'Yes') : __d('dejw_cake_standard_cms', 'No') ?>
                                     &nbsp;
@@ -47,12 +52,15 @@
                                         }
                                     ?>
                                 </td>
+                                <?php endif; ?>
                                 <!--<td><?= h($page->created) ?></td>-->
                                 <!--<td><?= h($page->modified) ?></td>-->
                                 <td class="actions" style="white-space:nowrap">
                                     <?= $this->Html->link(__d('dejw_cake_standard_cms', 'View'), ['action' => 'view', $page->id], ['escape' => false, 'class' => 'btn btn-info btn-xs']) ?>
                                     <?= $this->Html->link(__d('dejw_cake_standard_cms', 'Edit'), ['action' => 'edit', $page->id], ['escape' => false, 'class' => 'btn btn-warning btn-xs']) ?>
+                                    <?php if($authUser->hasRole('superadmin')):?>
                                     <?= $this->Form->postLink(__d('dejw_cake_standard_cms', 'Delete'), ['action' => 'delete', $page->id], ['escape' => false, 'confirm' => __d('dejw_cake_standard_cms', 'Are you sure you want to delete this entry?'), 'class' => 'btn btn-danger btn-xs']) ?>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -63,7 +71,9 @@
                             <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                             <th scope="col"><?= $this->Paginator->sort('slug') ?></th>
                             <th scope="col"><?= $this->Paginator->sort('view') ?></th>
+                            <?php if($authUser->hasRole('superadmin')):?>
                             <th scope="col"><?= $this->Paginator->sort('enabled') ?></th>
+                            <?php endif; ?>
                             <!--<th scope="col"><?= $this->Paginator->sort('created') ?></th>-->
                             <!--<th scope="col"><?= $this->Paginator->sort('modified') ?></th>-->
                             <th scope="col" class="actions"><?= __d('dejw_cake_standard_cms', 'Actions') ?></th>
