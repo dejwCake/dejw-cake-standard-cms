@@ -25,9 +25,9 @@
                 <?= $this->Form->create($setting, ['role' => 'form']) ?>
                 <div class="box-body">
                     <?php
-                        echo $this->Form->input('setting_key');
-                        echo $this->Form->input('value');
-                        echo $this->Form->input('enabled');
+                        echo $this->Form->input('setting_key', ['label' => __d('dejw_cake_standard_cms', 'Key')]);
+                        echo $this->Form->input('value', ['label' => __d('dejw_cake_standard_cms', 'Value')]);
+                        echo $this->Form->input('enabled', ['label' => __d('dejw_cake_standard_cms', 'Enabled')]);
                     ?>
                 </div>
                 <!-- /.box-body -->

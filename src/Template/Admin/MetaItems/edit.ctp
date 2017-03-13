@@ -25,7 +25,7 @@
                 <?= $this->Form->create($metaItem, ['role' => 'form']) ?>
                 <div class="box-body">
                     <?php
-                        echo $this->Form->input('enabled');
+                        echo $this->Form->input('enabled', ['label' => __d('dejw_cake_standard_cms', 'Enabled')]);
                     ?>
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
@@ -43,13 +43,13 @@
                                  id="tab_<?= $i ?>">
                                 <?php
                                     if($languageSettings['locale'] == $defaultLocale){
-                                        echo $this->Form->input('title');
-                                        echo $this->Form->input('keywords');
-                                        echo $this->Form->input('description');
+                                        echo $this->Form->input('title', ['label' => __d('dejw_cake_standard_cms', 'Title')]);
+                                        echo $this->Form->input('keywords', ['label' => __d('dejw_cake_standard_cms', 'Keywords')]);
+                                        echo $this->Form->input('description', ['label' => __d('dejw_cake_standard_cms', 'Description')]);
                                     } else {
-                                        echo $this->Form->input('_translations.' . $languageSettings['locale'] . '.title');
-                                        echo $this->Form->input('_translations.' . $languageSettings['locale'] . '.keywords');
-                                        echo $this->Form->input('_translations.' . $languageSettings['locale'] . '.description');
+                                        echo $this->Form->input('_translations.' . $languageSettings['locale'] . '.title', ['label' => __d('dejw_cake_standard_cms', 'Title')]);
+                                        echo $this->Form->input('_translations.' . $languageSettings['locale'] . '.keywords', ['label' => __d('dejw_cake_standard_cms', 'Keywords')]);
+                                        echo $this->Form->input('_translations.' . $languageSettings['locale'] . '.description', ['label' => __d('dejw_cake_standard_cms', 'Description')]);
                                     }
                                 ?>
                             </div>
