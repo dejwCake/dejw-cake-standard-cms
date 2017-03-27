@@ -36,9 +36,9 @@ class MetaItemsTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('meta_items');
-        $this->displayField('title');
-        $this->primaryKey('id');
+        $this->setTable('meta_items');
+        $this->setDisplayField('title');
+        $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
         $this->addBehavior('Muffin/Trash.Trash');
@@ -71,15 +71,15 @@ class MetaItemsTable extends Table
 
         $validator
             ->requirePresence('title', 'create')
-            ->notEmpty('title');
+            ->allowEmpty('title');
 
         $validator
             ->requirePresence('keywords', 'create')
-            ->notEmpty('keywords');
+            ->allowEmpty('keywords');
 
         $validator
             ->requirePresence('description', 'create')
-            ->notEmpty('description');
+            ->allowEmpty('description');
 
         $validator
             ->addNestedMany('_translations', $translationValidator)

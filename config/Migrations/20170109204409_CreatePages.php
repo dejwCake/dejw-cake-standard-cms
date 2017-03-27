@@ -16,16 +16,8 @@ class CreatePages extends AbstractMigration
         $table->addColumn('title', 'string', [
             'limit' => 255,
         ]);
-        $table->addIndex(['title',], [
-            'name' => 'title',
-            'unique' => true,
-        ]);
         $table->addColumn('slug', 'string', [
             'limit' => 255,
-        ]);
-        $table->addIndex(['slug',], [
-            'name' => 'slug',
-            'unique' => true,
         ]);
         $table->addColumn('perex', 'text', [
             'null' => true,
@@ -52,6 +44,12 @@ class CreatePages extends AbstractMigration
         $table->addColumn('deleted', 'datetime', [
             'default' => null,
             'null' => true,
+        ]);
+        $table->addIndex(['title', 'deleted'], [
+            'unique' => true,
+        ]);
+        $table->addIndex(['slug', 'deleted'], [
+            'unique' => true,
         ]);
         $table->create();
 

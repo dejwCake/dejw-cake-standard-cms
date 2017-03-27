@@ -87,8 +87,8 @@ class PagesController extends AppController
     {
         $page = $this->Pages->newEntity();
         if ($this->request->is('post')) {
-            $this->request->data('created_by', $this->Auth->user('id'));
-            $page = $this->Pages->patchEntity($page, $this->request->data, [
+            $this->request->getData('created_by', $this->Auth->user('id'));
+            $page = $this->Pages->patchEntity($page, $this->request->getData(), [
                 'translations' => true
             ]);
             if ($this->Pages->save($page)) {

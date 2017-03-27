@@ -123,6 +123,6 @@ class PagesTable extends Table
      * @return array
      */
     public function getViews() {
-        return ['default' => __d('dejw_cake_standard_cms', 'Default'), 'view_contact' => __d('dejw_cake_standard_cms', 'Contact')];
+        return ['default' => __d('dejw_cake_standard_cms', 'Default')];
     }
 }

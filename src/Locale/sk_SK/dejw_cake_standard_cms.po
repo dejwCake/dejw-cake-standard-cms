@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2017-03-13 23:42+0100\n"
-"PO-Revision-Date: 2017-03-13 23:44+0100\n"
+"POT-Creation-Date: 2017-03-27 21:13+0200\n"
+"PO-Revision-Date: 2017-03-27 21:14+0200\n"
 "Last-Translator: \n"
 "Language-Team: EMAIL@ADDRESS\n"
 "Language: sk\n"
@@ -132,8 +132,7 @@ msgid "Enabled"
 msgstr "Povolené"
 
 #: Template/Admin/MetaItems/add.ctp:46;50
-#: Template/Admin/MetaItems/edit.ctp:46;50
-#: Template/Admin/Pages/add.ctp:47;51;55;59
+#: Template/Admin/MetaItems/edit.ctp:46;50 Template/Admin/Pages/add.ctp:47;55
 #: Template/Admin/Pages/edit.ctp:49;53;57;61
 msgid "Title"
 msgstr "Názov"
@@ -279,6 +278,10 @@ msgstr "Perex"
 #: Template/Admin/Pages/add.ctp:49;57 Template/Admin/Pages/edit.ctp:51;59
 msgid "Text"
 msgstr "Text"
+
+#: Template/Admin/Pages/add.ctp:51;59
+msgid "Page Title"
+msgstr "Titulok stranky"
 
 #: Template/Admin/Pages/index.ctp:4
 msgid "Pages"

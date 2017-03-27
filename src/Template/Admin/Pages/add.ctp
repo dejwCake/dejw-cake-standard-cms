@@ -48,7 +48,7 @@
                                         echo $this->Form->input('perex', ['class' => 'ckeditor', 'label' => __d('dejw_cake_standard_cms', 'Perex')]);
                                         echo $this->Form->input('text', ['class' => 'ckeditor', 'label' => __d('dejw_cake_standard_cms', 'Text')]);
 
-                                        echo $this->Form->input('meta_item.title', ['label' => __d('dejw_cake_standard_cms', 'Title')]);
+                                        echo $this->Form->input('meta_item.title', ['label' => __d('dejw_cake_standard_cms', 'Page Title')]);
                                         echo $this->Form->input('meta_item.keywords', ['label' => __d('dejw_cake_standard_cms', 'Keywords')]);
                                         echo $this->Form->input('meta_item.description', ['label' => __d('dejw_cake_standard_cms', 'Description')]);
                                     } else {
@@ -56,7 +56,7 @@
                                         echo $this->Form->input('_translations.' . $languageSettings['locale'] . '.perex', ['class' => 'ckeditor', 'label' => __d('dejw_cake_standard_cms', 'Perex')]);
                                         echo $this->Form->input('_translations.' . $languageSettings['locale'] . '.text', ['class' => 'ckeditor', 'label' => __d('dejw_cake_standard_cms', 'Text')]);
 
-                                        echo $this->Form->input('meta_item._translations.' . $languageSettings['locale'] . '.title', ['label' => __d('dejw_cake_standard_cms', 'Title')]);
+                                        echo $this->Form->input('meta_item._translations.' . $languageSettings['locale'] . '.title', ['label' => __d('dejw_cake_standard_cms', 'Page Title')]);
                                         echo $this->Form->input('meta_item._translations.' . $languageSettings['locale'] . '.keywords', ['label' => __d('dejw_cake_standard_cms', 'Keywords')]);
                                         echo $this->Form->input('meta_item._translations.' . $languageSettings['locale'] . '.description', ['label' => __d('dejw_cake_standard_cms', 'Description')]);
                                     }

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2017-03-13 22:22+0000\n"
+"POT-Creation-Date: 2017-03-27 19:12+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -147,7 +147,7 @@ msgstr ""
 
 #: Template/Admin/MetaItems/add.ctp:46;50
 #: Template/Admin/MetaItems/edit.ctp:46;50
-#: Template/Admin/Pages/add.ctp:47;51;55;59
+#: Template/Admin/Pages/add.ctp:47;55
 #: Template/Admin/Pages/edit.ctp:49;53;57;61
 msgid "Title"
 msgstr ""
@@ -325,6 +325,10 @@ msgstr ""
 #: Template/Admin/Pages/add.ctp:49;57
 #: Template/Admin/Pages/edit.ctp:51;59
 msgid "Text"
+msgstr ""
+
+#: Template/Admin/Pages/add.ctp:51;59
+msgid "Page Title"
 msgstr ""
 
 #: Template/Admin/Pages/index.ctp:4
