@@ -1,10 +1,24 @@
 {
-    "name": "DejwCake/StandardCMS",
-    "description": "DejwCake/StandardCMS plugin for CakePHP",
+    "name": "dejw-cake/standard-cms",
+    "description": "StandardCMS plugin for CakePHP",
     "type": "cakephp-plugin",
+    "keywords": [
+        "cms"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "DejwCake",
+            "email": "github@dejw.sk",
+            "role": "Author"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
-        "cakephp/cakephp": ">=3.3.2 <4.0.0"
+        "cakephp/cakephp": ">=3.3.2 <4.0.0",
+        "dejw-cake/adminlte": "dev-master",
+        "dejw-cake/helpers": "dev-master",
+        "dejw-cake/standard-auth": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
